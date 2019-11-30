@@ -56,4 +56,12 @@ class UtilTest {
 
         test `should equal` testEqual
     }
+
+    @Test
+    fun cutString3() {
+        val test = utilVersionBlock("5.0.1.communityMy", '.')
+        val testEqual = arrayListOf<String>("5", "0", "1")
+
+        test `should equal` testEqual
+    }
 }

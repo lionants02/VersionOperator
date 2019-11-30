@@ -62,5 +62,10 @@ fun String.VersionOp() = VersionOperator(this)
 
 internal fun utilVersionBlock(source: String, delimiters: Char): List<String> {
     val replaceSoruce = source.replace(Regex("""^([\d.]+).*$"""), "$1")
-    return replaceSoruce.split(delimiters)
+    return replaceSoruce.split(delimiters).mapNotNull {
+        if (it.isNullOrBlank()) {
+            null
+        } else
+            it
+    }
 }

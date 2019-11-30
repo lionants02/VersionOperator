@@ -35,7 +35,7 @@ class VersionOperatorTest {
 
     @Test
     fun compareEqual() {
-        val testVersion = VersionOperator("9.2.0")
+        val testVersion = "9.2.0".VersionOp()
 
         (mainVersion < testVersion) `should be equal to` false
         (mainVersion > testVersion) `should be equal to` false
@@ -85,7 +85,7 @@ class VersionOperatorTest {
 
     @Test
     fun `Main version is less than minor version 3`() {
-        val minor = VersionOperator("9.2.1a-Test-dev")
+        val minor = "9.2.1a-Test-dev".VersionOp()
 
         (mainVersion < minor) `should be equal to` true
         (mainVersion > minor) `should be equal to` false
@@ -103,7 +103,7 @@ class VersionOperatorTest {
 
     @Test
     fun `Main version rather than minor version 2`() {
-        val minor = VersionOperator("1")
+        val minor = "1".VersionOp()
 
         (mainVersion < minor) `should be equal to` false
         (mainVersion > minor) `should be equal to` true
@@ -112,7 +112,7 @@ class VersionOperatorTest {
 
     @Test
     fun `Main version rather than minor version 3`() {
-        val minor = VersionOperator("1.0FirstVersion")
+        val minor = "1.0FirstVersion".VersionOp()
 
         (mainVersion < minor) `should be equal to` false
         (mainVersion > minor) `should be equal to` true
