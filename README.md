@@ -1,6 +1,7 @@
 # String Version Operator
 
 [![Release](https://jitpack.io/v/lionants02/VersionOperator.svg)](https://jitpack.io/#lionants02/VersionOperator) 
+![](https://github.com/lionants02/VersionOperator/workflows/Java%20CI/badge.svg)
 
 ```$xslt
 Normal
@@ -28,17 +29,17 @@ dependencies {
 }
 ```
 
-Use see in test
+Use see in unit test
 ```
     \\ Example 1
     val a = "1.1".VersionOp()
     val b = "1.1.0.0".VersionOp()
     
-    a == b is true
-    a > b is false
-    a < b is false
-    a <= b is true
-    a >= b is true
+        a == b is true
+        a > b is false
+        a < b is false
+        a <= b is true
+        a >= b is true
 
     \\ Example 2 don't care string.
     val a = "1.1TestDev".VersionOp()
@@ -46,7 +47,7 @@ Use see in test
     val c = "1.1.0.0Production".VersionOp()
     val d = "1.1".VersionOp()
     
-    a == b == c == d is true
+        a == b == c == d is true
 
     \\ Example 3
     val a = "1.1TestDev".VersionOp()
